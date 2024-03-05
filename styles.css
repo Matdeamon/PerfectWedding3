@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'fontmio';
+    src:url('./webfonts_Bad-Script-Regular/Bad-Script-Regular.ttf.woff') format('woff'),
+        url('Bad-Script-Regular.ttf.svg#Bad-Script-Regular') format('svg'),
+        url('./webfonts_Bad-Script-Regular/Bad-Script-Regular.ttf.eot'),
+        url('Bad-Script-Regular.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    margin: 0;
+}
+.contenido1{
+    text-align: center;
+    font-family: 'fontmio';
+    color:  #126a61;
+    position: relative;
+    
+    padding-top: 15%;
+
+}
+.titulo1{
+    font-size:40px;
+    font-weight: lighter;
+}
+.info1{
+    font-weight: lighter;
+}
+.contenido2{
+    text-align: center;
+    padding: 50px;
+    font-family: 'fontmio';
+    
+}
+.Flores1{
+    max-width: 50%;
+    max-height: 400px;
+    height: 50%;
+    width: auto;
+    position: relative;
+    bottom: 0%;
+    right: 0;
+    z-index: -1;
+}
+.dinner{
+    
+    position: relative;
+    width: 75%;
+    max-width: 500px;
+    max-height: auto;
+   
+}
+
+.prueba{
+    text-align: right;
+    max-height: 20%;
+}
+.prueba2{
+    position: absolute;
+    text-align: left;
+    max-height: 20%;
+}
+.Flores2{
+    max-width: 50%;
+    max-height: 400px;
+    height: 50%;
+    width: auto;
+    position: relative;
+    bottom: 0%;
+    right: 0;
+    z-index: -1;
+}
+
+.img-restringida2{
+
+}

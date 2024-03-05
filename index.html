@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matrimonio Cata & Matías</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="icon" href="./icons8-novia-16.png" type="image/x-icon">
+  </head>
+  <body class="relative pt-10 pb-32">
+    <!-- top left background image -->
+      <img src="./Fotos/Fondo.png" alt="Flores" class="absolute w-1/2 sm:w-1/3 z-0 top-0 left-0" />
+
+    <!-- bottom right background image -->
+    <img src="./Fotos/Complemento.png" alt="Flores" class="absolute w-1/2 sm:w-1/3 z-0 right-0 bottom-0" />
+
+    <!-- main div -->
+    <div
+      class="flex flex-col justify-center items-center w-full text-[#126a61] font-[fontmio] z-10 relative"
+    >
+      <img src="./Fotos/Dinner.jpg" alt="Dinner" class="sm:w-7/12 w-3/4 pt-10" />
+
+      <h1 class="text-center text-[40px] pt-10 font-light">
+        Matrimonio
+        <br />
+        Cata & Matías
+      </h1>
+
+      <h3 class="font-light pt-10">
+        El plazo máximo para confirmar es el viernes 12 de abril
+      </h3>
+
+      <h2 class="py-10 font-bold text-black">
+        Formulario de confirmación de asistencia
+      </h2>
+
+      <form
+        action="https://script.google.com/macros/s/AKfycbxLW4O-ZDo4zM-qqmrZoKCB7Dt2olN_Ov-EJmLTZKtI1mNHaO7j-liDf6cteYnoxBYQyA/exec"
+        method="post"
+        class="flex flex-col w-3/4 sm:w-1/2 items-left lg:px-20"
+        onsubmit="validateForm(event)"
+      >
+
+          <label for="name" class="flex-row pt-5">Nombre y Apellido</label>
+          <input class="flex-row w-full" type="text" name="name" placeholder="" required />
+
+          <label for="attendance" class="flex-row pt-5">¿Asistirás al evento?</label>
+          <select name="attendance" id="attendance" class="flex-row" required onchange="toggleRequired()">
+            <option value="">Selecciona una opción</option>
+            <option value="yes">Sí, asistiré</option>
+            <option value="no">No podré</option>
+          </select>
+
+          <label for="menu" class="flex-row pt-5">Elige tu Menú</label>
+          <select name="menu" id="menu" class="flex-row" required>
+            <option value="">Selecciona una opción</option>
+            <option value="Normal">Elegido por los Novios</option>
+            <option value="Veggie">Vegetariano</option>
+            <option value="Vegano">Vegano</option>
+            <option value="No asiste">No asistiré</option>
+          </select>
+          <label for="Alergia" class="flex-row pt-5">¿Tienes alguna restricción o alergia alimentaria?</label>
+          <input type="text" name="Alergia" placeholder="" class="flex-row" required />
+
+          <label for="name2" class="flex-row pt-5">Nombre y apellido de tu acompañante</label>
+          <input type="text" name="name2" placeholder="" class="flex-row"/>
+
+          <label for="menu2" class="flex-row pt-5">Elige menú de tu acompañante</label>
+          <select name="menu2" id="menu2" class="flex-row">
+            <option value="">Selecciona una opción</option>
+            <option value="Normal">Elegido por los Novios</option>
+            <option value="Veggie">Vegetariano</option>
+            <option value="Vegano">Vegano</option>
+            <option value="No asiste">No asistiré</option>
+          </select>
+
+          <label for="Alergia2" class="flex-row pt-5">¿Tu acompañante tiene alguna restricción o alergia alimentaria?</label>
+          <input type="text" name="Alergia2" placeholder="" class="flex-row"/>
+
+          <label for="Musica" class="flex-row pt-5">¿Qué canción no puede faltar?</label>
+          <input type="text" name="Musica" placeholder="" class="flex-row"/>
+
+          <button type="submit" class="flex-row pt-5 submit-button">Enviar</button>
+      </form>
+      <script>
+        function toggleRequired() {
+            var attendance = document.getElementById("attendance").value;
+            var alergiaInput = document.getElementsByName("Alergia")[0];
+            var musicaInput = document.getElementsByName("Musica")[0];
+            var menuSelect = document.getElementById("menu");
+            var menu2Select = document.getElementById("menu2");
+    
+            if (attendance === "no") {
+                alergiaInput.removeAttribute("required");
+                musicaInput.removeAttribute("required");
+                menuSelect.value = "No asiste";
+                menu2Select.value = "No asiste";
+                document.getElementsByName("Alergia")[0].value = "No";
+                document.getElementsByName("Alergia2")[0].value = "No";
+                document.getElementsByName("name2")[0].value = "No";
+
+            } else {
+                alergiaInput.setAttribute("required", "");
+                menuSelect.value = "";
+                menu2Select.value = "";
+            }
+        }
+    
+        function validateForm(event) {
+            var attendance = document.getElementById("attendance").value;
+            var alergiaInput = document.getElementsByName("Alergia")[0].value;
+            var alergia2Input = document.getElementsByName("Alergia2")[0].value;
+            var musicaInput = document.getElementsByName("Musica")[0].value;
+            var name2Input = document.getElementsByName("name2")[0].value;
+    
+            if (attendance === "no" && (alergiaInput === "" || musicaInput === "")) {
+                document.getElementsByName("Alergia")[0].value = "No";
+                document.getElementsByName("Musica")[0].value = "No";
+            }
+            if(alergiaInput === ""){
+              document.getElementsByName("Alergia")[0].value = "No";
+            }
+            if(alergia2Input === ""){
+              document.getElementsByName("Alergia2")[0].value = "No";
+            }
+            if(alergia2Input === ""){
+              document.getElementsByName("Alergia2")[0].value = "No";
+            }
+            if(musicaInput === ""){
+              document.getElementsByName("Musica")[0].value = "No";
+            }
+            if(name2Input === ""){
+              document.getElementsByName("name2")[0].value = "No";
+            }
+        }
+    </script>
+
+    </div>
+  </body>
+</html>
